@@ -1,17 +1,13 @@
+class mario():
 
-
-
-class mario:
-    
-    
-    def __init__(self,x,y,vidas):
+    def __init__(self, x, y, vidas):
         self.x = x
         self.y = y
         self.vidas = vidas
-        self.inicial = None
-        self.procesoSalto = False
-        self.procesoSaltoUp = False
-        self.gravedad = False
+        self.initial = None
+        self.OnJump = False
+        self.OnJumpUp = False
+        self.gravity = False
         self.spX = 5
         self.spY = 32
         self.spDir = -1
@@ -19,25 +15,27 @@ class mario:
         self.moving = False
         #score y sumado son para el score de mario
         self.score = 0
-        self.sumado = False
+        self.score_added = False
         #variable de mario para las vidas , salto, las animaciones (sps, dir y moving)
     
     
     #aqui calcularemos el valor del score de mario si salta un barril   
     def scoreCalc(self):
-        if self.sumado == False:
+        if self.score_added == False:
             self.score += 100
-            self.sumado = True
-    #funcion de salto de mario que hace que suba hasta cierta Y, y luego baja usando la gravedad del main        
-    def saltoMario(self):
-        if self.procesoSaltoUp == True:
+            self.score_added = True
+    #funcion de salto de mario que hace que suba hasta cierta Y, y luego baja usando la gravedad del main
+
+    def mario_jump(self):
+        if self.OnJumpUp:
             self.y -= 1.5
-            if self.inicial-15 == self.y:
-                self.procesoSaltoUp = False
-            elif self.inicial == self.y:
-                self.procesoSalto = False
+            if self.initial-15 == self.y:
+                self.OnJumpUp = False
+            elif self.initial == self.y:
+                self.OnJump = False
     #aqui tenemos las diferentes animaciones que mario podrá usar del pyxeleditor
-    #definimos la posicion de donde debe cogerla usando spX y spY            
+    #definimos la posicion de donde debe cogerla usando spX y spY
+
     def aniMario(self):
         if self.dir == "aire":
             self.spX =221
