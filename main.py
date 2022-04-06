@@ -363,8 +363,7 @@ class Game:
                         if Barril.x >= intervalo[0]-1 and Barril.x <= intervalo[1]-1 and Barril.y == intervalo[2]+6:
                            movimiento = "move"
                            direccion = "D"
-                #este if aunq no es necesario lo pongo para que sea más facil de entender al teacher (a ti vaya xd), hago lo mismo en los demás metodos
-                #(sumame 0,1 por ser tan buena gente digo yo no?)
+
                 if movimiento == "move" and direccion == "A":
                    Barril.x -= 2.8
                    Barril.bajarEscalera = False
