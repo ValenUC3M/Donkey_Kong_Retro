@@ -4,8 +4,9 @@
 class plataforma:
     
    def __init__(self):
-      self.listaMario = [] 
-      self.crearListaMario()
+       self.listaMario = []
+       self.crearListaMario()
+
       
    '''basicamente lo que hacemos es crear el objeto escalera usando una lista de coordenadas donde estan todas las plataformas,
    se que no es objetos al 100% pero me parece más optimizado. En definitiva usamos esto para luego en marioplataforma comparar x e y''' 

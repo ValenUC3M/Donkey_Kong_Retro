@@ -354,26 +354,27 @@ class Game:
                 #primero determinamos en que cuadrante del mapa para saber su direccion
                 #cuadrante guardado entre comillas en la clase barril
                 for intervalo in self.plataforma.listaMario:
-                    if  intervalo[3] == 1 or intervalo[3] == 3 or intervalo[3] == 5:
+                    if intervalo[3] == 1 or intervalo[3] == 3 or intervalo[3] == 5:
                         if Barril.x >= intervalo[0]+4 and Barril.x <= intervalo[1]+4 and Barril.y == intervalo[2]+6:
                            movimiento = "move"
                            direccion = "A"
                                  
-                    elif  intervalo[3] == 2 or intervalo[3] == 4 or intervalo[3] == 6:
+                    elif intervalo[3] == 2 or intervalo[3] == 4 or intervalo[3] == 6:
                         if Barril.x >= intervalo[0]-1 and Barril.x <= intervalo[1]-1 and Barril.y == intervalo[2]+6:
                            movimiento = "move"
                            direccion = "D"
 
                 if movimiento == "move" and direccion == "A":
-                   Barril.x -= 2.8
-                   Barril.bajarEscalera = False
+                    Barril.x -= 2.8
+                    Barril.bajarEscalera = False
                    
                 elif movimiento == "move" and direccion == "D":
-                   Barril.x += 2.8
-                   Barril.bajarEscalera = False
+                    Barril.x += 2.8
+                    Barril.bajarEscalera = False
                 #aqui nos aseguramos de que el barril no baje doble solo xq está en caida de escalera jeje
                 elif Barril.bajarEscalera == False:
-                   Barril.y += 3
+                    Barril.y += 1
+
             else:
                 Barril.moving = False
                 Barril.x = 60
