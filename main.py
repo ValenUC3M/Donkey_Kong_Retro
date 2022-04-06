@@ -339,6 +339,7 @@ class Game:
             #segundo bucle para determinar la variacion en x e y de cada barril
             movimiento = None
             if Barril.moving == True and Barril.x >= 3 :
+                print(Barril.x, Barril.y)
                 import random
                 for intervalo in self.escalera.barril:
                     if Barril.x >= intervalo[0] and Barril.x <= intervalo[1] and Barril.y == intervalo[2]:
@@ -379,8 +380,5 @@ class Game:
                 Barril.x = 60
                 Barril.y = 74
     ######################################################################################################################
-    '''Decir que saque la nota que saque gracias a esta wea he aprendido más que en toda mi vida y
-    puede que no apruebe a la primera pero gracias a este proyecto he visto que mi lugar está aqui, amo hacer 
-    esto, supone un reto y me despierta ganas de hacerlo más :)'''
-    #nyachan
+
 Game()
